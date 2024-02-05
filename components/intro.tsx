@@ -1,17 +1,33 @@
 "use client";
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { useInView } from 'react-intersection-observer';
+import { useActiveSectionContext } from '@/context/Active-section-context'
 
 const Intro = () => {
 
+    const { ref, inView } = useInView({
+        threshold: 0.5
+
+    }); const { setActiveSection, timeOfLastClick, setTimeOfLastClick } = useActiveSectionContext();
+
+    useEffect(() => {
+        if(inView && Date.now() - timeOfLastClick > 1000) {
+            setActiveSection("Home")
+        }
+    }, [inView, setActiveSection, timeOfLastClick, setTimeOfLastClick])
+
     return (
-        <section className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
-            <div className='flex items-center justify-center'>
+        <section
+            ref={ref}
+            id="home"
+            className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+        >            <div className='flex items-center justify-center'>
                 <div className="relative">
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}
