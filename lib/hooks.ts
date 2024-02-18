@@ -16,6 +16,7 @@ export const useSectionInView = (sectionName: SectionName, threshold = 0.75) => 
         }
     }, [inView, setActiveSection, timeOfLastClick, setTimeOfLastClick, sectionName])
     return {
-        ref
+        ref,
+        inView
     }
 }
