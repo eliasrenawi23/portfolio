@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React from 'react'
 import SectionHeading from './SectionHeading';
 import { FaPaperPlane } from 'react-icons/fa';
+import { sendEmail } from "@/actions/sendEmail";
 
 const Contact = () => {
 
@@ -39,6 +40,9 @@ const Contact = () => {
 
             <form
                 className="mt-10 flex flex-col dark:text-black"
+                action={async (formData) => {
+                    await sendEmail(formData);
+                }}
             >
                 <input
                     className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
