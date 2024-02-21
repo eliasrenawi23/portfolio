@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import Header from "@/components/header";
+import Header from "@/components/Header";
 import { Inter } from 'next/font/google'
 import './globals.css'
-import ActiveSectionContextProvider from '@/context/Active-section-context';
+import ActiveSectionContextProvider from '@/context/ActiveSectionContext';
 import { Toaster } from 'react-hot-toast';
 import Footer from '@/components/Footer';
 import TheamSwitch from '@/components/TheamSwitch';

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
-import { useActiveSectionContext } from "@/context/Active-section-context";
+import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 
 
 const Header = () => {
