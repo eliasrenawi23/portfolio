@@ -43,6 +43,7 @@ export const experiencesData = [
     },
     {
         title: "Graduated Course ",
+        location: "Fursa Full-stack development bootcamp ",
         description:
             "Course of 225 hours for Full stack Engineers",
         icon: React.createElement(FaReact),
