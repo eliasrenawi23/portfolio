@@ -38,7 +38,7 @@ export const experiencesData = [
         location: "Galil Software, Nazareth, IL ",
         description:
             "Software Engineer at Galil Software with over 1 year of experience, specializing in React, Typescript, Next.js, and Python Flask",
-        icon: React.createElement(LuGraduationCap),
+        icon: React.createElement(CgWorkAlt),
         date: "2023-present",
     },
     {
@@ -49,11 +49,11 @@ export const experiencesData = [
         date: "2022",
     },
     {
-        title: "Tutor",
+        title: "Math Tutor",
         location: "ORT Braude College of Engineering",
         description:
-            "Tutor for first year student in math courses",
-        icon: React.createElement(LuGraduationCap),
+            "Tutor for first year students in math courses",
+        icon: React.createElement(CgWorkAlt),
         date: "2021-2022",
     },
     {
@@ -61,7 +61,7 @@ export const experiencesData = [
         location: "ORT Braude College of Engineering",
         description:
             "Graduated with a B.Sc. in Software Engineering from ORT Braude College of Engineering ",
-        icon: React.createElement(CgWorkAlt),
+        icon: React.createElement(LuGraduationCap),
         date: "2017-2022",
     },
 
