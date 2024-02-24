@@ -9,6 +9,8 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/ActiveSectionContext';
+import EliasPfp from "@/public/EliasRenawi_pfp.png";
+
 
 const Intro = () => {
     const { ref } = useSectionInView("Home", 0.5);
@@ -30,7 +32,7 @@ const Intro = () => {
                             duration: 0.2,
                         }}
                     >
-                        <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100"
+                        <Image src={EliasPfp}
                             alt="Ricardo portrait"
                             width="192"
                             height="192"
@@ -59,11 +61,11 @@ const Intro = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <span className="font-bold">Hello, I'm Elias.</span> I'm a{" "}
-                <span className="font-bold">full-stack developer</span> with{" "}
-                <span className="font-bold">one year</span> of experience. I enjoy
-                building <span className="italic">sites & apps</span>. My focus is{" "}
-                <span className="underline">React.js</span>.
+                <span className="font-bold">Hey there, I'm Elias,</span> your friendly neighborhood{" "}
+                <span className="font-bold">full-stack developer 🚀</span> with{" "}
+                <span className="font-bold">over a year </span> of experience, I enjoy
+                crafting  <span className="italic">sites & apps</span>. with{" "}
+                <span className="underline">React.js</span>.  Let's build something awesome! 💻✨{" "}
             </motion.h1>
             <motion.div
                 className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -96,7 +98,7 @@ const Intro = () => {
 
                 <a
                     className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/elias-renawi-056732190/"
                     target="_blank"
                 >
                     <BsLinkedin />
@@ -104,7 +106,7 @@ const Intro = () => {
 
                 <a
                     className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-                    href="https://github.com"
+                    href="https://github.com/eliasrenawi23"
                     target="_blank"
                 >
                     <FaGithubSquare />
