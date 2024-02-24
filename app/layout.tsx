@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import Footer from '@/components/Footer';
 import TheamSwitch from '@/components/TheamSwitch';
 import ThemeContextProvider from '@/context/ThemeContext';
-import Header from '@/components/Header';
+import Header from '../components/Header';
 
 const inter = Inter({ subsets: ['latin'] })
 
