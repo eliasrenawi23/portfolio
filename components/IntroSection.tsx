@@ -12,7 +12,7 @@ import { useActiveSectionContext } from '@/context/ActiveSectionContext';
 import EliasPfp from "@/public/EliasRenawi_pfp.png";
 
 
-const Intro = () => {
+const IntroSection = () => {
     const { ref } = useSectionInView("Home", 0.5);
     const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
@@ -116,4 +116,4 @@ const Intro = () => {
     )
 }
 
-export default Intro
+export default IntroSection

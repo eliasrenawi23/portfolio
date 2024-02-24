@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 
 
-const Header = () => {
+const HeadrePage = () => {
     const { activeSection, setActiveSection, setTimeOfLastClick } =
         useActiveSectionContext();
 
@@ -64,4 +64,4 @@ const Header = () => {
     );
 }
 
-export default Header
+export default HeadrePage
