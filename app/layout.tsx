@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Header from "@/components/Header";
 import { Inter } from 'next/font/google'
 import './globals.css'
 import ActiveSectionContextProvider from '@/context/ActiveSectionContext';
@@ -7,6 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import Footer from '@/components/Footer';
 import TheamSwitch from '@/components/TheamSwitch';
 import ThemeContextProvider from '@/context/ThemeContext';
+import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] })
 
