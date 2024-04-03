@@ -10,7 +10,10 @@ import toast from 'react-hot-toast';
 const Contact = () => {
 
     const { ref } = useSectionInView('Contact', 0.5);
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<{
+        senderEmail: string;
+        message: string;
+    }>({
         senderEmail: '',
         message: ''
     });
