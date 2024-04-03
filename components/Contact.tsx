@@ -1,7 +1,7 @@
 "use client";
 import { useSectionInView } from '@/lib/hooks';
 import { motion } from "framer-motion";
-import React from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import SectionHeading from './SectionHeading';
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from './SubmitBtn';
@@ -10,7 +10,18 @@ import toast from 'react-hot-toast';
 const Contact = () => {
 
     const { ref } = useSectionInView('Contact', 0.5);
+    const [formData, setFormData] = useState({
+        senderEmail: '',
+        message: ''
+    });
 
+    const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    }
 
     return (
         <motion.section
@@ -43,12 +54,16 @@ const Contact = () => {
                 className="mt-10 flex flex-col dark:text-black"
                 action={async (formData) => {
                     const { data, error } = await sendEmail(formData);
-
                     if(error) {
                         toast.error(error);
                         return;
                     }
                     toast.success("Email sent successfully!");
+                    setFormData({
+                        senderEmail: '',
+                        message: ''
+                    });
+
                 }}
             >
                 <input
@@ -56,12 +71,16 @@ const Contact = () => {
                     name='senderEmail'
                     type='email'
                     required
+                    onChange={handleChange}
+                    value={formData.senderEmail}
                     maxLength={500}
                     placeholder='Your Email'
                 />
                 <textarea
                     className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
                     name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Your message"
                     required
                     maxLength={5000}

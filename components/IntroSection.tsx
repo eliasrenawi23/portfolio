@@ -33,7 +33,7 @@ const IntroSection = () => {
                         }}
                     >
                         <Image src={EliasPfp}
-                            alt="Ricardo portrait"
+                            alt="Elias portrait"
                             width="192"
                             height="192"
                             quality="95"
@@ -61,10 +61,10 @@ const IntroSection = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <span className="font-bold">Hey there, I'm Elias,</span> your friendly neighborhood{" "}
-                <span className="font-bold">full-stack developer 🚀</span> with{" "}
-                <span className="font-bold">over a year </span> of experience, I enjoy
-                crafting  <span className="italic">sites & apps</span>. with{" "}
+                <span className="font-bold">Hey there, I'm Elias, </span> your friendly neighborhood{" "}
+                <span className="font-bold">Full-Stack developer! 🚀✨</span>{" "}
+                <span className="font-bold"> I enjoy crafting </span>
+                <span className="italic">sites & apps</span>. with{" "}
                 <span className="underline">React.js</span>.  Let's build something awesome! 💻✨{" "}
             </motion.h1>
             <motion.div
