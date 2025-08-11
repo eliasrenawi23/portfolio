@@ -22,15 +22,14 @@ const About = () => {
 
             <SectionHeading>About me</SectionHeading>
 
-            <p className="mb-3">
-                I'm Graduate {" "}
-                <span className="font-medium">Software Engineering </span> and
-                <span className="font-medium"> Full Stack Developer </span>, rocking the world of web and mobile applications with my mad skills{" "}
-                <span className="font-medium"> in both front and back end development! 🚀</span>.{" "}
-                <span className="italic">Armed with loads of passion,</span>  I whip up beautiful code and craft stunning UIs that'll make your eyes pop!
-                If you're on the hunt for an incredibly passionate developer to jazz up your team, look no further! Let's make magic together! ✨"
-                {" "}
-            </p>
+<p className="mb-3">
+  I'm a <span className="font-medium">Software Engineering graduate</span> and 
+  <span className="font-medium"> Full-Stack & AI Agent Engineer</span> with a passion for building high-impact web applications and intelligent document workflows. 🚀 
+  Skilled in <span className="font-medium">React, Next.js, TypeScript, Python Flask</span>, and modern AI tools like 
+  <span className="font-medium"> Azure OpenAI, Claude, and RAG pipelines</span>, I craft seamless user experiences from pixel-perfect UIs to scalable APIs. 
+  <span className="italic"> Fueled by curiosity and creativity,</span> I write clean, efficient code and design solutions that make a real difference. 
+  If you’re looking for a driven developer to bring innovation to your team, let’s build something extraordinary! ✨
+</p>
         </motion.section>
     )
 }

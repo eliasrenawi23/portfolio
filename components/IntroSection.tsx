@@ -61,11 +61,11 @@ const IntroSection = () => {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <span className="font-bold">Hey there, I'm Elias, </span> your friendly neighborhood{" "}
-                <span className="font-bold">Full-Stack developer! 🚀✨</span>{" "}
-                <span className="font-bold"> I enjoy crafting </span>
-                <span className="italic">sites & apps</span>. with{" "}
-                <span className="underline">React.js</span>.  Let's build something awesome! 💻✨{" "}
+            <span className="font-bold">Hey there, I'm Elias, </span>
+            a <span className="font-bold">Full-Stack & AI Engineer</span> building 
+            <span className="italic"> web apps and intelligent tools</span> with 
+            <span className="underline"> React, Next.js, and Python Flask</span>.
+
             </motion.h1>
             <motion.div
                 className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
