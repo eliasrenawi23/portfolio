@@ -40,7 +40,7 @@ export const experiencesData = [
     description:
         "Design and deliver high-performance React/Next.js interfaces, Python Flask APIs, and AI-powered document workflows. Experienced with RAG pipelines, OCR using Azure Document Intelligence, and deploying production chatbots with Azure OpenAI and Claude.",
     icon: React.createElement(CgWorkAlt),
-    date: "Apr 2023 – Present",
+    date: "Apr 2023 - Present",
     },
     {
         title: "Graduated Course ",
@@ -79,7 +79,7 @@ export const projectsData = [
         imageUrl: travelApp,
     },
     {
-        title: "chess Game",
+        title: "Chess Game",
         description:
             "Dive into a captivating chess experience crafted in C++ using the SDL API. Challenge your strategic prowess against friends or AI opponents in this immersive game",
         tags: ["C++", "SDL2"],

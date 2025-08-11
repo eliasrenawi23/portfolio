@@ -11,8 +11,29 @@ import HeadrePage from '@/components/HeadrePage';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Elias Renawi | Personal Protfolio ',
-  description: 'Full Stack Developer',
+  title: 'Elias Renawi | Full-Stack & AI Engineer',
+  description: 'I build React/Next.js apps and Python/Flask backends, with RAG and OCR (Azure).',
+  keywords: [
+    "Elias Renawi",
+    "Full-Stack Developer",
+    "AI Engineer",
+    "React",
+    "Next.js",
+    "Python",
+    "Flask",
+    "OCR",
+    "RAG",
+    "Azure"
+  ],
+  applicationName: "Elias Renawi — Portfolio",
+  openGraph: {
+    type: "website",
+    url: "https://eliasrenawi.vercel.app",
+    title: "Elias Renawi | Full-Stack & AI Engineer",
+    description: "React/Next.js, Flask, RAG, OCR (Azure).",
+    siteName: "Elias Renawi — Portfolio",
+    images: [{ url: "/EliasRenawi_pfp.png", width: 1200, height: 630, alt: "Elias Renawi Portfolio cover" }],
+  },
 }
 
 export default function RootLayout({
