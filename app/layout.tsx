@@ -49,7 +49,7 @@ export default function RootLayout({
     <html lang="en" className='!scroll-smooth'>
       <body
        className={`${inter.className}
-    relative min-h-screen antialiased
+    relative min-h-screen antialiased overflow-x-hidden
     pt-28 sm:pt-36
     bg-gradient-to-b from-gray-50 via-white to-gray-50
     text-gray-950

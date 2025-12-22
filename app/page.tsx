@@ -4,6 +4,7 @@ import SectionDivider from "@/components/SectionDivider";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
+import TetrisGame from "@/components/TetrisGame";
 import IntroSection from "@/components/IntroSection";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Contact />
+      <TetrisGame />
 
     </main>
   )

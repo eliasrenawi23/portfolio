@@ -32,7 +32,7 @@ const Contact = () => {
         <motion.section
             ref={ref}
             id="contact"
-            className="mb-20 sm:mb-28 w-[min(100%,42rem)]"
+            className="mb-20 sm:mb-28 w-[min(100%,42rem)] px-4 sm:px-0"
             initial={{
                 opacity: 0,
             }}
