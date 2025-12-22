@@ -2,14 +2,330 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    --line-color: #e5e7eb;
-  }
+/* ===== CSS Custom Properties ===== */
+:root {
+  --line-color: #e5e7eb;
   
-  html.dark {
-    --line-color: rgba(255, 255, 255, 0.2);
-  }
+  /* Gradient Colors */
+  --gradient-start: #6366f1;
+  --gradient-mid: #8b5cf6;
+  --gradient-end: #d946ef;
   
-  .borderBlack {
-    @apply border border-black/10;
+  /* Skill Category Colors */
+  --skill-frontend: #3b82f6;
+  --skill-backend: #10b981;
+  --skill-ai: #8b5cf6;
+  --skill-languages: #f59e0b;
+  --skill-tools: #ec4899;
+  
+  /* Glow Colors */
+  --glow-primary: rgba(99, 102, 241, 0.5);
+  --glow-secondary: rgba(139, 92, 246, 0.5);
+}
+
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+  --glow-primary: rgba(99, 102, 241, 0.3);
+  --glow-secondary: rgba(139, 92, 246, 0.3);
+}
+
+/* ===== Base Utilities ===== */
+.borderBlack {
+  @apply border border-black/10;
+}
+
+/* ===== Glassmorphism ===== */
+.glass {
+  @apply bg-white/70 backdrop-blur-lg border border-white/20;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-dark {
+  @apply dark:bg-gray-900/70 dark:border-white/10;
+}
+
+.glass-card {
+  @apply bg-white/60 backdrop-blur-md border border-white/30 rounded-2xl;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-card {
+  @apply bg-white/5 border-white/10;
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Gradient Text ===== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-animated {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end), var(--gradient-start));
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* ===== Glow Effects ===== */
+.glow-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.glow-button::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.glow-button:hover::before {
+  opacity: 0.6;
+}
+
+.glow-card {
+  position: relative;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  filter: blur(20px);
+  transform: translateY(10px);
+}
+
+.glow-card:hover::before {
+  opacity: 0.3;
+}
+
+/* ===== Gradient Border ===== */
+.gradient-border {
+  position: relative;
+  background: transparent;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  border-radius: inherit;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* ===== Avatar Ring ===== */
+.avatar-ring {
+  position: relative;
+}
+
+.avatar-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  border-radius: 50%;
+  z-index: -1;
+  animation: spin-slow 6s linear infinite;
+}
+
+/* ===== Skill Category Badges ===== */
+.skill-frontend {
+  --skill-color: var(--skill-frontend);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.skill-backend {
+  --skill-color: var(--skill-backend);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.skill-ai {
+  --skill-color: var(--skill-ai);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.skill-languages {
+  --skill-color: var(--skill-languages);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.skill-tools {
+  --skill-color: var(--skill-tools);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(236, 72, 153, 0.05));
+  border-color: rgba(236, 72, 153, 0.3);
+}
+
+/* ===== Animations ===== */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Floating Particles ===== */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.particle-1 {
+  width: 6px;
+  height: 6px;
+  background: var(--gradient-start);
+  animation: float 8s ease-in-out infinite;
+}
+
+.particle-2 {
+  width: 4px;
+  height: 4px;
+  background: var(--gradient-mid);
+  animation: float 10s ease-in-out infinite 1s;
+}
+
+.particle-3 {
+  width: 8px;
+  height: 8px;
+  background: var(--gradient-end);
+  animation: float 12s ease-in-out infinite 2s;
+}
+
+/* ===== Timeline Gradient ===== */
+.timeline-gradient {
+  background: linear-gradient(180deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+}
+
+/* ===== Floating Label Input ===== */
+.floating-input {
+  @apply relative;
+}
+
+.floating-input input,
+.floating-input textarea {
+  @apply w-full px-4 py-4 rounded-xl bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10;
+  @apply focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400;
+  @apply transition-all duration-300;
+}
+
+.floating-input input:focus,
+.floating-input textarea:focus {
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.floating-input label {
+  @apply absolute left-4 top-4 text-gray-500 dark:text-gray-400 pointer-events-none;
+  @apply transition-all duration-200;
+}
+
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label,
+.floating-input textarea:focus + label,
+.floating-input textarea:not(:placeholder-shown) + label {
+  @apply text-xs -top-2 left-2 px-2 bg-white dark:bg-zinc-900 text-indigo-600 dark:text-indigo-400;
+}
+
+/* ===== 3D Card Effect ===== */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-5px);
+}
+
+/* ===== Section Heading Decoration ===== */
+.section-heading-decorated::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 1rem auto 0;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 2px;
+}

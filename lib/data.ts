@@ -117,6 +117,36 @@ export const projectsData = [
     },
 ] as const;
 
+// Categorized skills for the redesigned Skills section
+export const skillsCategories = {
+    frontend: {
+        label: "Frontend",
+        color: "skill-frontend",
+        skills: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind"],
+    },
+    backend: {
+        label: "Backend",
+        color: "skill-backend",
+        skills: ["Python Flask", "Node.js", "MongoDB", "PostgreSQL", "MySQL"],
+    },
+    ai: {
+        label: "AI & ML",
+        color: "skill-ai",
+        skills: ["Azure OpenAI", "Claude AI", "RAG Pipelines", "LangChain"],
+    },
+    languages: {
+        label: "Languages",
+        color: "skill-languages",
+        skills: ["C", "C++", "C#", ".NET", "Java", "MATLAB"],
+    },
+    tools: {
+        label: "Tools",
+        color: "skill-tools",
+        skills: ["Docker", "GitHub Actions", "Git", "SDL2", "JavaFX", "Data Security", "Cryptology"],
+    },
+} as const;
+
+// Keep the flat array for backwards compatibility
 export const skillsData = [
   "HTML",
   "CSS",
