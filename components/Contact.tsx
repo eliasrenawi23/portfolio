@@ -48,32 +48,34 @@ const Contact = () => {
         >
             <SectionHeading>Contact me</SectionHeading>
             
-            <div className="glass-card p-8">
+            <div className="glass-card p-4 sm:p-8">
                 {/* Quick Contact Links */}
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
                     <a 
                         href="mailto:eliasrenawi23@gmail.com"
-                        className="flex items-center gap-2 px-4 py-2 rounded-full 
+                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full 
                             bg-gradient-to-r from-indigo-500/10 to-purple-500/10
                             border border-indigo-200/50 dark:border-indigo-500/30
                             text-indigo-700 dark:text-indigo-300
                             hover:from-indigo-500/20 hover:to-purple-500/20
-                            hover:scale-105 transition-all duration-300"
+                            hover:scale-105 transition-all duration-300
+                            w-full sm:w-auto"
                     >
-                        <BsEnvelope className="text-lg" />
-                        <span className="text-sm font-medium">eliasrenawi23@gmail.com</span>
+                        <BsEnvelope className="text-lg flex-shrink-0" />
+                        <span className="text-sm font-medium break-all sm:break-normal">eliasrenawi23@gmail.com</span>
                     </a>
                     
                     <a 
                         href="tel:0528423617"
-                        className="flex items-center gap-2 px-4 py-2 rounded-full 
+                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full 
                             bg-gradient-to-r from-emerald-500/10 to-teal-500/10
                             border border-emerald-200/50 dark:border-emerald-500/30
                             text-emerald-700 dark:text-emerald-300
                             hover:from-emerald-500/20 hover:to-teal-500/20
-                            hover:scale-105 transition-all duration-300"
+                            hover:scale-105 transition-all duration-300
+                            w-full sm:w-auto"
                     >
-                        <BsTelephone className="text-lg" />
+                        <BsTelephone className="text-lg flex-shrink-0" />
                         <span className="text-sm font-medium">052-842-3617</span>
                     </a>
                 </div>
