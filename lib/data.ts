@@ -5,6 +5,10 @@ import { LuGraduationCap } from "react-icons/lu";
 import chessGame from "@/public/chessGame.png";
 import travelApp from "@/public/travelApp.jpg";
 import ragChatbotHebrew from "@/public/ragChatbotHebrew.png";
+import textSearch from "@/public/textSearch.png";
+import employeeSystem from "@/public/employeeSystem.png";
+import secureEmail from "@/public/secureEmail.png";
+import restaurantMenus from "@/public/restaurantMenus.png";
 
 export const links = [
     {
@@ -35,117 +39,112 @@ export const links = [
 
 export const experiencesData = [
     {
-    title: "Full-Stack & AI Agent Engineer",
-    location: "Galil Software, Nazareth, IL",
-    description:
-        "Design and deliver high-performance React/Next.js interfaces, Python Flask APIs, and AI-powered document workflows. Experienced with RAG pipelines, OCR using Azure Document Intelligence, and deploying production chatbots with Azure OpenAI and Claude.",
-    icon: React.createElement(CgWorkAlt),
-    date: "Apr 2023 - Present",
+        title: "Full-Stack & AI Agent Engineer",
+        location: "Galil Software, Nazareth, IL",
+        description:
+            "Build high-performance React/Next.js interfaces, design REST APIs with Python Flask, and deploy AI agents/chatbots using Azure OpenAI & Claude. Developed OCR RAG pipelines with Azure Document Intelligence.",
+        icon: React.createElement(CgWorkAlt),
+        date: "April 2023 – Present",
     },
     {
-        title: "Graduated Course ",
-        location: "Fursa Full-stack development bootcamp ",
+        title: "Full Stack Engineer Training",
+        location: "Bootcamp",
         description:
-            "Course of 225 hours for Full stack Engineers",
+            "Completed a 225-hour course covering HTML/CSS/JS, MongoDB, Express, React, and Node.js.",
         icon: React.createElement(FaReact),
         date: "2022",
     },
     {
         title: "Math Tutor",
-        location: "ORT Braude College of Engineering",
+        location: "ORT Braude College",
         description:
-            "Tutor for first year students in math courses",
+            "Tutored first-year students in mathematics courses.",
         icon: React.createElement(CgWorkAlt),
-        date: "2021-2022",
+        date: "2021 - 2022",
     },
     {
-        title: "B.Sc.Software Engineering Graduate",
+        title: "B.Sc. Software Engineering",
         location: "ORT Braude College of Engineering",
         description:
-            "Graduated with a B.Sc. in Software Engineering from ORT Braude College of Engineering ",
+            "Graduated with GPA 83. Key grades: Computer Networks 98, OOP 96, Architecture 88. Final Project: Similar Text Search Technology.",
         icon: React.createElement(LuGraduationCap),
-        date: "2017-2022",
+        date: "2017 – 2022",
     },
-
-
 ] as const;
 
 export const projectsData = [
     {
-        title: "TravelApp",
+        title: "Similar Text Search",
         description:
-            "one of my First personal project 'The Travel App' for planning a Trip Abroad",
-        tags: ["React", "node.js", "MongoDB",],
-        imageUrl: travelApp,
+            "Research-based project using Text Rank algorithm to find similarity between large texts and extract significant sentences. Built with C# .NET.",
+        tags: ["C#", ".NET", "Text Rank", "Research"],
+        imageUrl: textSearch,
     },
     {
-        title: "Chess Game",
+        title: "Employee Management System",
         description:
-            "Dive into a captivating chess experience crafted in C++ using the SDL API. Challenge your strategic prowess against friends or AI opponents in this immersive game",
-        tags: ["C++", "SDL2"],
-        imageUrl: chessGame,
+            "Client-Server application for employees and students management using JavaFx, JDBC, MySQL, and OCSF.",
+        tags: ["Java", "JavaFX", "MySQL", "JDBC"],
+        imageUrl: employeeSystem,
     },
     {
         title: "RAG Chatbot",
         description:
-            "Hebrew document Q&A chatbot using Retrieval-Augmented Generation (RAG) with embeddings + vector search to ground answers in your own PDFs and text.",
+            "Hebrew document Q&A chatbot using Retrieval-Augmented Generation (RAG) with embeddings + vector search.",
         tags: ["Python", "LangChain", "ChromaDB", "RAG", "Streamlit"],
         imageUrl: ragChatbotHebrew,
-   },
+    },
+    {
+        title: "Chess Game",
+        description:
+            "Fully functional chess game developed in C++ using the SDL2 library.",
+        tags: ["C++", "SDL2"],
+        imageUrl: chessGame,
+    },
+    {
+        title: "Secure Email Exchange",
+        description:
+            "Implemented secure email exchange using Serpent and OFB model with El Gamal signature in Python.",
+        tags: ["Python", "Cryptography", "Serpent", "El Gamal"],
+        imageUrl: secureEmail,
+    },
+    {
+        title: "Restaurant Menus",
+        description:
+            "Created multiple online restaurant menus currently in use by local businesses.",
+        tags: ["Next.js", "React", "Web Design"],
+        imageUrl: restaurantMenus,
+    },
 ] as const;
 
 export const skillsData = [
-  // Frontend
   "HTML",
   "CSS",
+  "JavaScript",
   "TypeScript",
   "React",
   "Next.js",
-  "Tailwind",
-  "Redux",
-  
-  // Backend & APIs
   "Node.js",
-  "Express",
+  "Git",
+  "Tailwind",
   "Python Flask",
-  "REST API Design",
-  
-  // Databases
-  "SQL",
+  "MongoDB",
   "PostgreSQL",
   "MySQL",
-  "MongoDB",
-  
-  // AI & Data Processing
+  "C",
+  "C++",
+  "C#",
+  ".NET",
+  "Java",
+  "MATLAB",
   "Azure OpenAI",
   "Claude AI",
   "RAG Pipelines",
   "LangChain",
-  "OCR (Azure Document Intelligence)",
-  
-  // DevOps & Tools
-  "Git",
   "Docker",
-  "CI/CD (GitHub Actions)",
-  
-  // Low-level & Other Languages
-  "C",
-  "C++",
-  "Java",
-  "C# .NET",
-  "MATLAB",
-  
-  // Frameworks & Libraries
-  "SDL2/SDL3",
+  "GitHub Actions",
+  "SDL2",
   "JavaFX",
-  "JDBC",
-  
-  // Security & Cryptography
   "Data Security",
   "Cryptology",
-  
-  // Soft Skills
-  "Teamwork",
-  "Advanced Problem-Solving",
-  "Project Organization"
 ] as const;

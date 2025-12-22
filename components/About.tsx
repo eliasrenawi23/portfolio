@@ -22,14 +22,12 @@ const About = () => {
 
             <SectionHeading>About me</SectionHeading>
 
-<p className="mb-3">
-  I'm a <span className="font-medium">Software Engineering graduate</span> and 
-  <span className="font-medium"> Full-Stack & AI Agent Engineer</span> with a passion for building high-impact web applications and intelligent document workflows. 🚀 
-  Skilled in <span className="font-medium">React, Next.js, TypeScript, Python Flask</span>, and modern AI tools like 
-  <span className="font-medium"> Azure OpenAI, Claude, and RAG pipelines</span>, I craft seamless user experiences from pixel-perfect UIs to scalable APIs. 
-  <span className="italic"> Fueled by curiosity and creativity,</span> I write clean, efficient code and design solutions that make a real difference. 
-  If you’re looking for a driven developer to bring innovation to your team, let’s build something extraordinary! ✨
-</p>
+    <p className="mb-3">
+    I am a <span className="font-medium">Mid-level Full-Stack Software Engineer</span> with strong C/C++ foundations and expertise in 
+    <span className="font-medium"> React/Next.js and Python Flask</span>. I have a track record of delivering 
+    <span className="font-medium"> AI-powered document workflows and RAG pipelines</span> (using Azure OpenAI, Claude). 
+    <span className="italic"> I am now seeking new opportunities</span> to leverage my skills in building high-performance applications and intelligent agents.
+    </p>
         </motion.section>
     )
 }
