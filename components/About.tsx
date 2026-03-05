@@ -7,7 +7,7 @@ import { useSectionInView } from '@/lib/hooks'
 import { FaBriefcase, FaCode, FaGraduationCap } from 'react-icons/fa'
 
 const stats = [
-    { icon: <FaBriefcase />, value: "2+", label: "Years Exp." },
+    { icon: <FaBriefcase />, value: "3+", label: "Years Exp." },
     { icon: <FaCode />, value: "6", label: "Projects" },
     { icon: <FaGraduationCap />, value: "B.Sc.", label: "Software Eng." },
 ]
