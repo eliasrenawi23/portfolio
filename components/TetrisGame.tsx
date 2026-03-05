@@ -412,8 +412,9 @@ const TetrisGame = () => {
                         style={{
                             width: BOARD_WIDTH * mobileCellSize + 2,
                             height: BOARD_HEIGHT * mobileCellSize + 2,
-                            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1))',
+                            background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 27, 75, 0.6))',
                             border: '1px solid rgba(139, 92, 246, 0.3)',
+                            boxShadow: 'inset 0 0 20px rgba(139, 92, 246, 0.1)',
                         }}
                     >
                         {renderBoard().map((row, y) => (
@@ -425,10 +426,10 @@ const TetrisGame = () => {
                                         style={{
                                             width: mobileCellSize,
                                             height: mobileCellSize,
-                                            backgroundColor: cell || 'rgba(255, 255, 255, 0.03)',
-                                            border: cell ? '1px solid rgba(255, 255, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.05)',
-                                            borderRadius: '1px',
-                                            boxShadow: cell ? `inset 0 0 4px rgba(255, 255, 255, 0.3), 0 0 2px ${cell}` : 'none',
+                                            backgroundColor: cell || 'rgba(0, 0, 0, 0.1)',
+                                            border: cell ? '1px solid rgba(255, 255, 255, 0.4)' : '1px solid rgba(255, 255, 255, 0.03)',
+                                            borderRadius: '2px',
+                                            boxShadow: cell ? `inset 0 0 6px rgba(255,255,255,0.4), 0 0 6px ${cell}` : 'none',
                                         }}
                                     />
                                 ))}
@@ -539,8 +540,9 @@ const TetrisGame = () => {
                         style={{
                             width: BOARD_WIDTH * desktopCellSize + 2,
                             height: BOARD_HEIGHT * desktopCellSize + 2,
-                            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1))',
+                            background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 27, 75, 0.6))',
                             border: '1px solid rgba(139, 92, 246, 0.3)',
+                            boxShadow: 'inset 0 0 30px rgba(139, 92, 246, 0.15)',
                         }}
                     >
                         {renderBoard().map((row, y) => (
@@ -552,10 +554,10 @@ const TetrisGame = () => {
                                         style={{
                                             width: desktopCellSize,
                                             height: desktopCellSize,
-                                            backgroundColor: cell || 'rgba(255, 255, 255, 0.03)',
-                                            border: cell ? '1px solid rgba(255, 255, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.05)',
+                                            backgroundColor: cell || 'rgba(0, 0, 0, 0.1)',
+                                            border: cell ? '1px solid rgba(255, 255, 255, 0.4)' : '1px solid rgba(255, 255, 255, 0.03)',
                                             borderRadius: '2px',
-                                            boxShadow: cell ? `inset 0 0 8px rgba(255, 255, 255, 0.3), 0 0 4px ${cell}` : 'none',
+                                            boxShadow: cell ? `inset 0 0 10px rgba(255,255,255,0.4), 0 0 10px ${cell}` : 'none',
                                         }}
                                     />
                                 ))}

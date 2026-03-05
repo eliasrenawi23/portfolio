@@ -50,36 +50,41 @@ const skillIcons: Record<string, React.ReactNode> = {
     "Cryptology": <BsGearFill />,
 };
 
-const categoryColors: Record<string, { bg: string; border: string; text: string; icon: string }> = {
+const categoryColors: Record<string, { bg: string; border: string; text: string; icon: string; hoverShadow: string }> = {
     frontend: { 
         bg: "from-blue-500/10 to-blue-500/5", 
         border: "border-blue-500/30",
         text: "text-blue-600 dark:text-blue-400",
         icon: "text-blue-500",
+        hoverShadow: "hover:shadow-[0_0_12px_rgba(59,130,246,0.6)] hover:border-blue-500/60",
     },
     backend: { 
         bg: "from-emerald-500/10 to-emerald-500/5", 
         border: "border-emerald-500/30",
         text: "text-emerald-600 dark:text-emerald-400",
         icon: "text-emerald-500",
+        hoverShadow: "hover:shadow-[0_0_12px_rgba(16,185,129,0.6)] hover:border-emerald-500/60",
     },
     ai: { 
         bg: "from-purple-500/10 to-purple-500/5", 
         border: "border-purple-500/30",
         text: "text-purple-600 dark:text-purple-400",
         icon: "text-purple-500",
+        hoverShadow: "hover:shadow-[0_0_12px_rgba(168,85,247,0.6)] hover:border-purple-500/60",
     },
     languages: { 
         bg: "from-amber-500/10 to-amber-500/5", 
         border: "border-amber-500/30",
         text: "text-amber-600 dark:text-amber-400",
         icon: "text-amber-500",
+        hoverShadow: "hover:shadow-[0_0_12px_rgba(245,158,11,0.6)] hover:border-amber-500/60",
     },
     tools: { 
         bg: "from-pink-500/10 to-pink-500/5", 
         border: "border-pink-500/30",
         text: "text-pink-600 dark:text-pink-400",
         icon: "text-pink-500",
+        hoverShadow: "hover:shadow-[0_0_12px_rgba(236,72,153,0.6)] hover:border-pink-500/60",
     },
 };
 
@@ -116,20 +121,23 @@ const Skills = () => {
                     return (
                         <motion.div
                             key={key}
-                            className={`glass-card p-5 rounded-2xl border ${colors.border}`}
+                            className={`glass-card p-5 rounded-2xl border ${colors.border} card-3d bg-white/40 dark:bg-white/5 backdrop-blur-xl relative overflow-hidden group`}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: categoryIndex * 0.1, duration: 0.4 }}
                             viewport={{ once: true }}
                         >
+                            {/* Subtle background glow on card hover */}
+                            <div className={`absolute inset-0 bg-gradient-to-br ${colors.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+
                             {/* Category Header */}
-                            <h3 className={`text-lg font-semibold mb-4 ${colors.text} flex items-center gap-2`}>
-                                <span className={`w-2 h-2 rounded-full bg-current`}></span>
+                            <h3 className={`text-lg font-semibold mb-4 ${colors.text} flex items-center gap-2 relative z-10`}>
+                                <span className={`w-2 h-2 rounded-full bg-current shadow-[0_0_8px_currentColor]`}></span>
                                 {category.label}
                             </h3>
                             
                             {/* Skills Grid */}
-                            <ul className="flex flex-wrap gap-2">
+                            <ul className="flex flex-wrap gap-2 relative z-10">
                                 {category.skills.map((skill, index) => (
                                     <motion.li
                                         key={skill}
@@ -139,8 +147,8 @@ const Skills = () => {
                                             bg-gradient-to-r ${colors.bg}
                                             border ${colors.border}
                                             ${colors.text}
-                                            hover:scale-105 hover:shadow-md
-                                            transition-all duration-200 cursor-default
+                                            hover:scale-105 ${colors.hoverShadow}
+                                            transition-all duration-300 cursor-default
                                         `}
                                         variants={fadeInAnimationVariants}
                                         initial="initial"

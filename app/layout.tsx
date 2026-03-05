@@ -8,6 +8,8 @@ import TheamSwitch from '@/components/TheamSwitch';
 import ThemeContextProvider from '@/context/ThemeContext';
 import HeadrePage from '@/components/HeadrePage';
 import ParticlesBackground from '@/components/ParticlesBackground';
+import ScrollProgress from '@/components/ScrollProgress';
+import ParallaxOrbs from '@/components/ParallaxOrbs';
 import og from "@/public/EliasRenawi_pfp.png"
 
 const inter = Inter({ subsets: ['latin'] })
@@ -56,51 +58,8 @@ export default function RootLayout({
     dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900
     dark:text-gray-50 dark:text-opacity-90`}
       >
-        {/* Gradient Orbs - Updated colors for more vibrant look */}
-        <div className="
-        bg-[#c7d2fe] 
-        absolute top-[-6rem] 
-        -z-10 right-[11rem] 
-        h-[31.25rem] w-[31.25rem] 
-        rounded-full blur-[10rem]
-        sm:w-[68.75rem] 
-        dark:bg-[#3730a3]/30"></div>
-        <div className="
-        bg-[#ddd6fe] 
-        absolute top-[-1rem] 
-        -z-10 
-        left-[-35rem] 
-        h-[31.25rem] 
-        w-[50rem] 
-        rounded-full 
-        blur-[10rem] 
-        sm:w-[68.75rem] 
-        md:left-[-33rem] 
-        lg:left-[-28rem] 
-        xl:left-[-15rem] 
-        2xl:left-[-5rem] 
-        dark:bg-[#581c87]/20"></div>
-        
-        {/* Additional accent orb */}
-        <div className="
-        bg-[#fbcfe8] 
-        absolute top-[40rem] 
-        -z-10 
-        right-[-20rem] 
-        h-[25rem] 
-        w-[40rem] 
-        rounded-full 
-        blur-[10rem] 
-        dark:bg-[#831843]/20"></div>
-
-        {/* Subtle Grid Pattern */}
-        <div
-          aria-hidden
-          className="fixed inset-0 -z-10
-            [background-image:linear-gradient(to_right,rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.03)_1px,transparent_1px)]
-            [background-size:32px_32px]
-            dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]"
-        />
+        <ScrollProgress />
+        <ParallaxOrbs />
         
         <ThemeContextProvider>
           <ActiveSectionContextProvider>

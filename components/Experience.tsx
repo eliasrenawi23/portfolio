@@ -1,26 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import SectionHeading from "./SectionHeading";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/ThemeContext";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Experience = () => {
     const { ref } = useSectionInView("Experience");
     const { theme } = useTheme();
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start center", "end 80%"]
+    });
+    const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     return (
         <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40 w-full max-w-[50rem] px-4 sm:px-0">
             <SectionHeading>My experience</SectionHeading>
             
-            <div className="relative">
+            <div className="relative" ref={containerRef}>
                 {/* Gradient Timeline Line - Hidden on very small screens */}
-                <div 
-                    className="absolute left-4 sm:left-8 top-0 bottom-0 w-[2px] rounded-full hidden sm:block"
+                <motion.div 
+                    className="absolute left-4 sm:left-8 top-0 bottom-0 w-[2px] rounded-full hidden sm:block origin-top"
                     style={{
                         background: 'linear-gradient(180deg, #6366f1, #8b5cf6, #d946ef, #ec4899)',
+                        scaleY
                     }}
                 />
                 

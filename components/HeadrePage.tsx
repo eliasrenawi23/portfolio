@@ -15,7 +15,7 @@ const HeadrePage = () => {
         <header className="z-[999] relative">
             {/* Desktop Navigation */}
             <motion.div
-                className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white/30 bg-white/70 shadow-lg shadow-black/[0.03] backdrop-blur-lg sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950/70 dark:border-white/10 hidden sm:block"
+                className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white/30 bg-white/70 shadow-lg shadow-black/[0.03] backdrop-blur-lg sm:top-6 sm:h-[3.25rem] sm:w-[42rem] lg:w-[46rem] max-w-[95vw] sm:rounded-full dark:bg-gray-950/70 dark:border-white/10 hidden sm:block"
                 initial={{ y: -100, x: "-50%", opacity: 0 }}
                 animate={{ y: 0, x: "-50%", opacity: 1 }}
                 style={{
@@ -24,8 +24,8 @@ const HeadrePage = () => {
             ></motion.div>
 
             {/* Desktop Nav Links */}
-            <nav className="hidden sm:flex fixed top-[1.7rem] left-1/2 -translate-x-1/2 h-[initial] py-0">
-                <ul className="flex w-[initial] flex-nowrap items-center justify-center gap-5 text-[0.9rem] font-medium text-gray-500">
+            <nav className="hidden sm:flex fixed top-[1.7rem] left-1/2 -translate-x-1/2 h-[initial] py-0 z-10 w-full max-w-[42rem] lg:max-w-[46rem]">
+                <ul className="flex w-full flex-nowrap items-center justify-center gap-3 lg:gap-5 text-[0.85rem] lg:text-[0.9rem] font-medium text-gray-500">
                     {links.map((link) => (
                         <motion.li
                             className="h-3/4 flex items-center justify-center relative"
@@ -35,7 +35,7 @@ const HeadrePage = () => {
                         >
                             <Link
                                 className={clsx(
-                                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition-all duration-300 dark:text-gray-400 dark:hover:text-gray-200",
+                                    "flex w-full items-center justify-center px-2 py-3 lg:px-3 hover:text-gray-950 transition-all duration-300 dark:text-gray-400 dark:hover:text-gray-200",
                                     {
                                         "text-gray-950 dark:text-white":
                                             activeSection === link.name,
