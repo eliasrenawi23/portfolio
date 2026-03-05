@@ -86,7 +86,7 @@ const TetrisGame = () => {
     
     const [board, setBoard] = useState<Board>(createEmptyBoard())
     const [currentPiece, setCurrentPiece] = useState<Piece | null>(null)
-    const [nextPiece, setNextPiece] = useState<TetrominoType>(getRandomTetromino())
+    const [nextPiece, setNextPiece] = useState<TetrominoType>('T')
     const [score, setScore] = useState(0)
     const [lines, setLines] = useState(0)
     const [level, setLevel] = useState(1)

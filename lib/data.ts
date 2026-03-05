@@ -80,44 +80,62 @@ export const projectsData = [
     {
         title: "Similar Text Search",
         description:
-            "Research-based project using Text Rank algorithm to find similarity between large texts and extract significant sentences. Built with C# .NET.",
+            "Final-year research project using Text Rank algorithm to find similarity between large texts and extract significant sentences.",
         tags: ["C#", ".NET", "Text Rank", "Research"],
         imageUrl: textSearch,
+        impact: "B.Sc. Final Project",
+        githubUrl: "https://github.com/eliasrenawi23",
+        liveUrl: null,
     },
     {
         title: "Employee Management System",
         description:
-            "Client-Server application for employees and students management using JavaFx, JDBC, MySQL, and OCSF.",
+            "Full-stack client-server app for managing employees and students with real-time data sync.",
         tags: ["Java", "JavaFX", "MySQL", "JDBC"],
         imageUrl: employeeSystem,
+        impact: null,
+        githubUrl: "https://github.com/eliasrenawi23",
+        liveUrl: null,
     },
     {
         title: "RAG Chatbot",
         description:
-            "Hebrew document Q&A chatbot using Retrieval-Augmented Generation (RAG) with embeddings + vector search.",
+            "Hebrew document Q&A chatbot using Retrieval-Augmented Generation — enabling natural-language search over uploaded PDFs.",
         tags: ["Python", "LangChain", "ChromaDB", "RAG", "Streamlit"],
         imageUrl: ragChatbotHebrew,
+        impact: "AI-powered Q&A",
+        githubUrl: "https://github.com/eliasrenawi23",
+        liveUrl: null,
     },
     {
         title: "Chess Game",
         description:
-            "Fully functional chess game developed in C++ using the SDL2 library.",
+            "Fully functional chess game with move validation, check detection, and visual piece rendering.",
         tags: ["C++", "SDL2"],
         imageUrl: chessGame,
+        impact: null,
+        githubUrl: "https://github.com/eliasrenawi23",
+        liveUrl: null,
     },
     {
         title: "Secure Email Exchange",
         description:
-            "Implemented secure email exchange using Serpent and OFB model with El Gamal signature in Python.",
+            "End-to-end encrypted email exchange using Serpent cipher (OFB mode) with El Gamal digital signatures.",
         tags: ["Python", "Cryptography", "Serpent", "El Gamal"],
         imageUrl: secureEmail,
+        impact: null,
+        githubUrl: "https://github.com/eliasrenawi23",
+        liveUrl: null,
     },
     {
         title: "Restaurant Menus",
         description:
-            "Created multiple online restaurant menus currently in use by local businesses.",
+            "Multiple online restaurant menus currently serving real local businesses with live ordering support.",
         tags: ["Next.js", "React", "Web Design"],
         imageUrl: restaurantMenus,
+        impact: "Used by local businesses",
+        githubUrl: null,
+        liveUrl: null,
     },
 ] as const;
 

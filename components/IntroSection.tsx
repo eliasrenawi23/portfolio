@@ -94,13 +94,17 @@ const IntroSection = () => {
                 </h1>
                 <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300">
                     <span className="font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                        Mid-level Full-Stack Software Engineer
+                        Full-Stack & AI Engineer
                     </span>
                 </p>
                 <p className="mt-2 text-lg text-gray-600 dark:text-gray-400">
-                    with <span className="font-semibold">C/C++ foundations</span>, expert in{" "}
-                    <span className="underline decoration-indigo-500 underline-offset-4">React/Next.js</span> and{" "}
-                    <span className="underline decoration-purple-500 underline-offset-4">Python Flask</span>
+                    I build{" "}
+                    <span className="font-semibold underline decoration-indigo-500 underline-offset-4">AI-powered apps</span>{" "}
+                    &{" "}
+                    <span className="font-semibold underline decoration-purple-500 underline-offset-4">intelligent document workflows</span>
+                </p>
+                <p className="mt-1 text-sm sm:text-base text-gray-500 dark:text-gray-500">
+                    React · Python Flask · Azure AI — from idea to production
                 </p>
             </motion.div>
 
@@ -113,20 +117,33 @@ const IntroSection = () => {
                     delay: 0.2,
                 }}
             >
-                {/* Contact Button - Primary CTA with Glow */}
+                {/* View Work - Primary CTA with Glow */}
+                <Link
+                    href="#projects"
+                    className="group relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3.5 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-100 transition-all duration-300 shadow-lg hover:shadow-glow"
+                    onClick={() => {
+                        setActiveSection("Projects");
+                        setTimeOfLastClick(Date.now());
+                    }}
+                >
+                    <span className="relative z-10">View My Work</span>
+                    <BsArrowRight className="opacity-80 group-hover:translate-x-1 transition relative z-10" />
+                    
+                    {/* Glow Effect */}
+                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-300" />
+                </Link>
+
+                {/* Contact Button - Secondary CTA */}
                 <Link
                     href="#contact"
-                    className="group relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3.5 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-100 transition-all duration-300 shadow-lg hover:shadow-glow"
+                    className="group glass glass-dark px-8 py-3.5 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-100 transition-all duration-300 cursor-pointer hover:shadow-lg dark:hover:shadow-glow-purple/20"
                     onClick={() => {
                         setActiveSection("Contact");
                         setTimeOfLastClick(Date.now());
                     }}
                 >
-                    <span className="relative z-10">Contact me here</span>
-                    <BsArrowRight className="opacity-80 group-hover:translate-x-1 transition relative z-10" />
-                    
-                    {/* Glow Effect */}
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-300" />
+                    Contact me here{" "}
+                    <BsArrowRight className="opacity-60 group-hover:translate-x-1 transition" />
                 </Link>
 
                 {/* Download CV Button */}
