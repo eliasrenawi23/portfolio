@@ -42,6 +42,7 @@ export default function Project({
                         alt={`${title} project screenshot`}
                         quality={95}
                         fill
+                        placeholder="blur"
                         className="object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60" />
@@ -134,6 +135,7 @@ export default function Project({
                             src={imageUrl}
                             alt={`${title} project screenshot`}
                             quality={95}
+                            placeholder="blur"
                             className="rounded-t-lg shadow-2xl
                                 transition-all duration-500
                                 group-hover:scale-[1.04]
