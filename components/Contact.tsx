@@ -6,11 +6,10 @@ import SectionHeading from './SectionHeading';
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from './SubmitBtn';
 import toast from 'react-hot-toast';
-import { BsLinkedin, BsEnvelope, BsTelephone } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa";
+import { HiDownload } from "react-icons/hi";
 
 const Contact = () => {
-
     const { ref } = useSectionInView('Contact', 0.5);
     const [formData, setFormData] = useState<{
         senderEmail: string;
@@ -32,180 +31,139 @@ const Contact = () => {
         <motion.section
             ref={ref}
             id="contact"
-            className="mb-20 sm:mb-28 w-[min(100%,42rem)] px-4 sm:px-0"
-            initial={{
-                opacity: 0,
-            }}
-            whileInView={{
-                opacity: 1,
-            }}
-            transition={{
-                duration: 1,
-            }}
-            viewport={{
-                once: true,
-            }}
+            className="w-full max-w-[70rem] mx-auto px-4 sm:px-6 py-12 scroll-mt-20 mb-20 sm:mb-28"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
         >
-            <SectionHeading>Contact me</SectionHeading>
+            <SectionHeading>Contact</SectionHeading>
             
-            <div className="glass-card p-4 sm:p-8">
-                {/* Quick Contact Links */}
-                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                    <a 
-                        href="mailto:eliasrenawi23@gmail.com"
-                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full 
-                            bg-gradient-to-r from-indigo-500/10 to-purple-500/10
-                            border border-indigo-200/50 dark:border-indigo-500/30
-                            text-indigo-700 dark:text-indigo-300
-                            hover:from-indigo-500/20 hover:to-purple-500/20
-                            hover:scale-105 transition-all duration-300
-                            w-full sm:w-auto"
-                    >
-                        <BsEnvelope className="text-lg flex-shrink-0" />
-                        <span className="text-sm font-medium break-all sm:break-normal">eliasrenawi23@gmail.com</span>
-                    </a>
+            <div className="border border-border bg-bg-soft rounded-lg p-6 sm:p-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                     
-                    <a 
-                        href="tel:0528423617"
-                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full 
-                            bg-gradient-to-r from-emerald-500/10 to-teal-500/10
-                            border border-emerald-200/50 dark:border-emerald-500/30
-                            text-emerald-700 dark:text-emerald-300
-                            hover:from-emerald-500/20 hover:to-teal-500/20
-                            hover:scale-105 transition-all duration-300
-                            w-full sm:w-auto"
-                    >
-                        <BsTelephone className="text-lg flex-shrink-0" />
-                        <span className="text-sm font-medium">052-842-3617</span>
-                    </a>
-                </div>
-                
-                {/* Social Links */}
-                <div className="flex justify-center gap-3 mb-8">
-                    <a
-                        className="p-3 rounded-full 
-                            bg-gradient-to-r from-blue-500/10 to-blue-600/10
-                            border border-blue-200/50 dark:border-blue-500/30
-                            text-blue-600 dark:text-blue-400
-                            hover:from-blue-500/20 hover:to-blue-600/20
-                            hover:scale-110 transition-all duration-300"
-                        href="https://www.linkedin.com/in/elias-renawi-056732190/"
-                        target="_blank"
-                        aria-label="LinkedIn"
-                    >
-                        <BsLinkedin className="text-xl" />
-                    </a>
-                    <a
-                        className="p-3 rounded-full 
-                            bg-gradient-to-r from-gray-500/10 to-gray-600/10
-                            border border-gray-200/50 dark:border-gray-500/30
-                            text-gray-700 dark:text-gray-300
-                            hover:from-gray-500/20 hover:to-gray-600/20
-                            hover:scale-110 transition-all duration-300"
-                        href="https://github.com/eliasrenawi23"
-                        target="_blank"
-                        aria-label="GitHub"
-                    >
-                        <FaGithubSquare className="text-xl" />
-                    </a>
-                </div>
+                    {/* Left: Recruiter positioning and context info */}
+                    <div className="lg:col-span-5 flex flex-col justify-between">
+                        <div>
+                            <h3 className="text-xl sm:text-2xl font-serif font-bold text-text leading-tight mb-4">
+                                Have a role or project where AI needs to actually work in production?
+                            </h3>
+                            <p className="text-sm text-muted leading-relaxed mb-6 font-sans">
+                                Send a message directly using the dossier form or reach out through traditional channels. I review files daily.
+                            </p>
+                        </div>
 
-                {/* Divider */}
-                <div className="relative mb-8">
-                    <div className="absolute inset-0 flex items-center">
-                        <div className="w-full border-t border-gray-200 dark:border-gray-700"></div>
+                        {/* List of contact reference logs */}
+                        <div className="space-y-4 border-t border-border/80 pt-6 mt-4">
+                            <div className="flex items-center gap-3">
+                                <FaEnvelope className="text-accent text-sm flex-shrink-0" />
+                                <div className="flex flex-col">
+                                    <span className="font-mono text-[8px] text-muted uppercase">EMAIL ADDR</span>
+                                    <a href="mailto:eliasrenawi23@gmail.com" className="text-xs text-text hover:text-accent font-mono transition-colors">
+                                        eliasrenawi23@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                <FaPhone className="text-accent text-sm flex-shrink-0" />
+                                <div className="flex flex-col">
+                                    <span className="font-mono text-[8px] text-muted uppercase">PHONE COMMS</span>
+                                    <a href="tel:0528423617" className="text-xs text-text hover:text-accent font-mono transition-colors">
+                                        052-842-3617
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                <FaLinkedin className="text-accent text-sm flex-shrink-0" />
+                                <div className="flex flex-col">
+                                    <span className="font-mono text-[8px] text-muted uppercase">LINKEDIN PROFILE</span>
+                                    <a href="https://www.linkedin.com/in/elias-renawi-056732190/" target="_blank" rel="noopener noreferrer" className="text-xs text-text hover:text-accent font-mono transition-colors">
+                                        elias-renawi-056732190
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                <FaGithub className="text-accent text-sm flex-shrink-0" />
+                                <div className="flex flex-col">
+                                    <span className="font-mono text-[8px] text-muted uppercase">GITHUB REPOS</span>
+                                    <a href="https://github.com/eliasrenawi23" target="_blank" rel="noopener noreferrer" className="text-xs text-text hover:text-accent font-mono transition-colors">
+                                        eliasrenawi23
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Extra Action button */}
+                        <div className="pt-6">
+                            <a
+                                href="CV.pdf"
+                                download
+                                className="inline-flex items-center gap-2 px-4 py-2 border border-accent hover:bg-accent hover:text-bg text-accent text-xs font-semibold uppercase tracking-wider rounded transition-colors"
+                            >
+                                Download CV dossier <HiDownload className="text-sm" />
+                            </a>
+                        </div>
                     </div>
-                    <div className="relative flex justify-center text-sm">
-                        <span className="px-4 bg-white/60 dark:bg-white/5 text-gray-500 dark:text-gray-400 rounded-full">
-                            or send a message
-                        </span>
+
+                    {/* Right: Contact Form */}
+                    <div className="lg:col-span-7 border border-border/80 bg-bg p-6 rounded shadow-xs">
+                        <form
+                            className="flex flex-col gap-4"
+                            action={async (formData) => {
+                                const { data, error } = await sendEmail(formData);
+                                if(error) {
+                                    toast.error(error);
+                                    return;
+                                }
+                                toast.success("Email transmitted successfully!");
+                                setFormData({
+                                    senderEmail: '',
+                                    message: ''
+                                });
+                            }}
+                        >
+                            <div className="flex flex-col gap-1.5">
+                                <label htmlFor="email-input" className="font-mono text-[9px] uppercase tracking-wider text-muted font-bold">
+                                    Sender Address (Email)
+                                </label>
+                                <input
+                                    className="w-full h-11 px-3 border border-border bg-bg-soft text-text rounded focus:border-accent focus:outline-none transition-colors"
+                                    name='senderEmail'
+                                    type='email'
+                                    required
+                                    onChange={handleChange}
+                                    value={formData.senderEmail}
+                                    maxLength={500}
+                                    placeholder="your.email@domain.com"
+                                    id="email-input"
+                                />
+                            </div>
+                            
+                            <div className="flex flex-col gap-1.5">
+                                <label htmlFor="message-input" className="font-mono text-[9px] uppercase tracking-wider text-muted font-bold">
+                                    Message Body
+                                </label>
+                                <textarea
+                                    className="w-full h-40 px-3 py-2 border border-border bg-bg-soft text-text rounded focus:border-accent focus:outline-none resize-none transition-colors"
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    placeholder="Specify details about your project, contract, or open position..."
+                                    required
+                                    maxLength={5000}
+                                    id="message-input"
+                                />
+                            </div>
+                            
+                            <div className="pt-2">
+                                <SubmitBtn />
+                            </div>
+                        </form>
                     </div>
                 </div>
-                
-                {/* Contact Form */}
-                <form
-                    className="flex flex-col gap-4"
-                    action={async (formData) => {
-                        const { data, error } = await sendEmail(formData);
-                        if(error) {
-                            toast.error(error);
-                            return;
-                        }
-                        toast.success("Email sent successfully!");
-                        setFormData({
-                            senderEmail: '',
-                            message: ''
-                        });
-
-                    }}
-                >
-                    <div className="relative">
-                        <input
-                            className="w-full h-14 px-4 pt-4 rounded-xl 
-                                bg-white/80 dark:bg-white/5 
-                                border border-gray-200 dark:border-white/10
-                                focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400
-                                focus:ring-4 focus:ring-indigo-500/10
-                                transition-all duration-300
-                                peer"
-                            name='senderEmail'
-                            type='email'
-                            required
-                            onChange={handleChange}
-                            value={formData.senderEmail}
-                            maxLength={500}
-                            placeholder=" "
-                            id="email-input"
-                        />
-                        <label 
-                            htmlFor="email-input"
-                            className="absolute left-4 top-4 text-gray-500 dark:text-gray-400 pointer-events-none
-                                transition-all duration-200
-                                peer-focus:text-xs peer-focus:-top-2 peer-focus:left-2 peer-focus:px-2 
-                                peer-focus:bg-white dark:peer-focus:bg-zinc-900 
-                                peer-focus:text-indigo-600 dark:peer-focus:text-indigo-400
-                                peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:-top-2 
-                                peer-[:not(:placeholder-shown)]:left-2 peer-[:not(:placeholder-shown)]:px-2
-                                peer-[:not(:placeholder-shown)]:bg-white dark:peer-[:not(:placeholder-shown)]:bg-zinc-900"
-                        >
-                            Your Email
-                        </label>
-                    </div>
-                    
-                    <div className="relative">
-                        <textarea
-                            className="w-full h-52 px-4 pt-6 rounded-xl 
-                                bg-white/80 dark:bg-white/5 
-                                border border-gray-200 dark:border-white/10
-                                focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400
-                                focus:ring-4 focus:ring-indigo-500/10
-                                transition-all duration-300 resize-none
-                                peer"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            placeholder=" "
-                            required
-                            maxLength={5000}
-                            id="message-input"
-                        />
-                        <label 
-                            htmlFor="message-input"
-                            className="absolute left-4 top-4 text-gray-500 dark:text-gray-400 pointer-events-none
-                                transition-all duration-200
-                                peer-focus:text-xs peer-focus:-top-2 peer-focus:left-2 peer-focus:px-2 
-                                peer-focus:bg-white dark:peer-focus:bg-zinc-900 
-                                peer-focus:text-indigo-600 dark:peer-focus:text-indigo-400
-                                peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:-top-2 
-                                peer-[:not(:placeholder-shown)]:left-2 peer-[:not(:placeholder-shown)]:px-2
-                                peer-[:not(:placeholder-shown)]:bg-white dark:peer-[:not(:placeholder-shown)]:bg-zinc-900"
-                        >
-                            Your Message
-                        </label>
-                    </div>
-                    
-                    <SubmitBtn />
-                </form>
             </div>
         </motion.section>
     );

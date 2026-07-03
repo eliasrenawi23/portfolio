@@ -12,26 +12,20 @@ export default function SubmitBtn() {
         <button
             type="submit"
             className="group relative flex items-center justify-center gap-2 h-12 w-full 
-                bg-gradient-to-r from-indigo-600 to-purple-600 
-                text-white rounded-xl 
-                outline-none 
-                transition-all duration-300
-                hover:shadow-lg hover:shadow-indigo-500/25
-                focus:scale-[1.02] hover:scale-[1.02] active:scale-100 
-                disabled:scale-100 disabled:bg-opacity-65 disabled:cursor-not-allowed"
+                bg-accent text-bg hover:bg-accent-3 hover:text-white rounded
+                outline-none transition-all duration-200
+                focus:scale-[1.01] hover:scale-[1.01] active:scale-100 
+                disabled:scale-100 disabled:opacity-65 disabled:cursor-not-allowed"
             disabled={pending}
         >
             {pending ? (
-                <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+                <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-current"></div>
             ) : (
                 <>
-                    <span className="font-medium">Send Message</span>
-                    <FaPaperPlane className="text-sm opacity-80 transition group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <span className="font-mono text-xs uppercase tracking-wider font-bold">Transmit Message</span>
+                    <FaPaperPlane className="text-xs opacity-80 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </>
             )}
-            
-            {/* Glow Effect */}
-            <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-300 -z-10" />
         </button>
     );
 }

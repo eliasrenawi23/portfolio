@@ -1,93 +1,61 @@
-/* eslint-disable react/no-unescaped-entities */
-"use client"
+"use client";
 import React from 'react'
 import SectionHeading from './SectionHeading'
 import { motion } from 'framer-motion'
 import { useSectionInView } from '@/lib/hooks'
-import { FaBriefcase, FaCode, FaGraduationCap } from 'react-icons/fa'
-
-const stats = [
-    { icon: <FaBriefcase />, value: "3+", label: "Years Exp." },
-    { icon: <FaCode />, value: "6", label: "Projects" },
-    { icon: <FaGraduationCap />, value: "B.Sc.", label: "Software Eng." },
-]
 
 const About = () => {
-
-    const { ref } = useSectionInView('About');
-
+    const { ref } = useSectionInView('About', 0.5);
 
     return (
         <motion.section
             ref={ref}
-            className="mb-28 max-w-[45rem] scroll-mt-28 sm:mb-40"
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.175 }}
+            className="w-full max-w-[50rem] mx-auto px-4 sm:px-6 py-12 scroll-mt-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             id="about"
         >
             <SectionHeading>About me</SectionHeading>
 
-            {/* Quick Stats Row */}
-            <div className="flex justify-center gap-4 sm:gap-8 mb-6">
-                {stats.map((stat, index) => (
-                    <motion.div
-                        key={stat.label}
-                        className="flex flex-col items-center gap-1 glass-card px-4 py-3 sm:px-6 sm:py-4 min-w-[90px]"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 + index * 0.1 }}
-                    >
-                        <span className="text-indigo-500 dark:text-indigo-400 text-lg">
-                            {stat.icon}
-                        </span>
-                        <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                            {stat.value}
-                        </span>
-                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-                            {stat.label}
-                        </span>
-                    </motion.div>
-                ))}
-            </div>
+            <div className="border border-border bg-bg-soft rounded-lg p-6 sm:p-10 text-left relative overflow-hidden">
+                {/* File Reference Label */}
+                <div className="absolute top-4 right-4 font-mono text-[8px] text-muted">
+                    ENGINEER PROFILE REF: ER-83
+                </div>
 
-            <div className="glass-card p-8 text-center leading-8">
-                <p className="mb-4 text-gray-700 dark:text-gray-300">
-                    I am a{" "}
-                    <span className="font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                        Full-Stack & AI Engineer
-                    </span>{" "}
-                    with strong C/C++ foundations and expertise in{" "}
-                    <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-                        React/Next.js
-                    </span>{" "}
-                    and{" "}
-                    <span className="font-semibold text-purple-600 dark:text-purple-400">
-                        Python Flask
-                    </span>.
-                </p>
-                
-                <p className="text-gray-700 dark:text-gray-300">
-                    I have a track record of delivering{" "}
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-700 dark:bg-purple-500/20 dark:text-purple-300">
-                        ✨ AI-powered document workflows
-                    </span>{" "}
-                    and{" "}
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300">
-                        🔗 RAG pipelines
-                    </span>{" "}
-                    using Azure OpenAI and Claude.
-                </p>
-                
-                {/* CTA Badge instead of italic text */}
-                <div className="mt-6">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold
-                        bg-gradient-to-r from-indigo-500/10 to-purple-500/10 
-                        text-indigo-700 dark:text-indigo-300
-                        border border-indigo-300/40 dark:border-indigo-500/30
-                        animate-pulse">
-                        🟢 Open to new opportunities
-                    </span>
+                <div className="space-y-6 max-w-[42rem]">
+                    <p className="text-lg font-serif font-semibold text-text leading-relaxed italic border-l-2 border-accent pl-4">
+                        “I’m a full-stack engineer who likes turning unclear business processes into reliable software. My strongest work sits between frontend product UI, backend APIs, and AI document automation.”
+                    </p>
+
+                    <div className="text-sm text-text leading-relaxed space-y-4">
+                        <p>
+                            My coding foundations began in deep C/C++ engineering, which trained me to design structured, memory-efficient systems and understand lower-level protocols. Today, I apply that rigor to modern full-stack application development and enterprise AI agent orchestration.
+                        </p>
+                        
+                        <p>
+                            On the frontend, I design responsive, client-centered UI with <span className="font-semibold text-accent">React and Next.js</span>. On the backend, I create scalable web servers using <span className="font-semibold text-accent-2">Python Flask</span>, routing intelligence to <span className="font-semibold text-accent-3">Azure AI Document Intelligence, Claude, and OpenAI APIs</span>. I store data in MongoDB/Cosmos or SQL relational schemas.
+                        </p>
+
+                        <p>
+                            Outside of writing application code, I specialize in building, optimizing, and maintaining localized business pipelines (e.g., Hebrew document OCR engines, vector database semantic retrievals, validation systems), making sure AI agents perform reliably in high-volume, real-world business databases.
+                        </p>
+                    </div>
+
+                    {/* Technical dossiers labels footer */}
+                    <div className="border-t border-border/80 pt-6 mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] text-muted uppercase">
+                        <div>
+                            <span className="font-bold text-accent">CORE LANGUAGE:</span> ENGLISH, HEBREW, ARABIC
+                        </div>
+                        <div>
+                            <span className="font-bold text-accent-2">B.SC. GPA:</span> 83 (ORT BRAUDE)
+                        </div>
+                        <div>
+                            <span className="font-bold text-accent-3">STATUS:</span> OPEN FOR NEW OPPORTUNITIES
+                        </div>
+                    </div>
                 </div>
             </div>
         </motion.section>
